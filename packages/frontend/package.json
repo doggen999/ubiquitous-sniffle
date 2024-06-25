@@ -1,11 +1,35 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "echo \"Add start-script for the frontend here\""
+    "dev": "vite",
+    "format": "prettier . --write",
+    "lint": "eslint"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@fluentui/react-components": "^9.54.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.7",
+    "@eslint/compat": "^1.1.0",
+    "@eslint/js": "^9.5.0",
+    "@types/react": "^18.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "globals": "^15.6.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.14.1",
+    "vite": "^5.3.1"
+  }
 }

@@ -1,15 +1,16 @@
-# Axis code test
+# Ubiquitous Sniffle
+
+A fork of [Axis code test](https://github.com/liljaTobias/axis-code-test)
 
 ## Getting started
 
-This is a monorepo with two packages, backend and frontend, using npm workspaces. Easiest way to get started with the test is to fork this repo do the tasks there. When you're done send us a link to your fork.
+This is a monorepo with two packages, `backend` and `frontend`, using npm workspaces.
 
-If you run into any issues or have questions don't hesitate to contact the technical interviewer.
+### Prerequisites
 
-### Tools
+The project requires Node `^21`.
 
-- NodeJS
-- GitHub
+With `nvm` installed you can simply run `nvm use`
 
 ### Start dev eniroment
 

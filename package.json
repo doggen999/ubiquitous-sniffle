@@ -1,13 +1,13 @@
 {
-  "name": "axis-code-test",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "ubiquitous-sniffle",
+  "version": "0.0.1",
   "scripts": {
     "build": "tsc --build --verbose tsconfig.json",
     "start:backend": "npm run dev -w=backend",
     "start:frontend": "npm run dev -w=frontend",
     "dev": "concurrently \"npm:start:*\"",
-    "lint": "prettier . --check"
+    "format:frontend": "npm -w frontend run format",
+    "lint:frontend": "npm -w frontend run lint"
   },
   "workspaces": [
     "packages/backend",
