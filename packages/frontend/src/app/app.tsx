@@ -55,7 +55,7 @@ const useStyles = makeStyles({
     gridTemplate: 'auto auto auto / 1fr 1fr',
     gridGap: '0.25rem',
     padding: '1rem',
-    background: 'linear-gradient(90deg, white -25%, #ffcc33)',
+    background: 'linear-gradient(270deg, white -25%, #ffcc33)',
     borderRadius: '8px',
     border: '2px solid #997000',
   },
