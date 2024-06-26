@@ -8,7 +8,11 @@ import {
   fetchExchange,
 } from 'urql';
 
-import { FluentProvider, webLightTheme } from '@fluentui/react-components';
+import {
+  FluentProvider,
+  webLightTheme,
+  Theme,
+} from '@fluentui/react-components';
 
 import App from './app';
 
@@ -20,9 +24,15 @@ const client = new Client({
 
 const root = createRoot(document.getElementById('app'));
 
+const customLightTheme: Theme = {
+  ...webLightTheme,
+
+  fontFamilyBase: 'Open Sans, sans-serif',
+};
+
 root.render(
   <StrictMode>
-    <FluentProvider theme={webLightTheme}>
+    <FluentProvider theme={customLightTheme}>
       <GraphQLProvider value={client}>
         <App />
       </GraphQLProvider>

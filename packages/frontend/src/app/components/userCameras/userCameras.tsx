@@ -41,7 +41,7 @@ const UserCameras = ({ cameras }: UserCamerasProps) => {
                   name={c.name}
                   niceName={c.niceName}
                   id={c.id}
-                  disabledIcon={false}
+                  disabled={false}
                   assignable={false}
                   address={c.address}
                 />
@@ -50,12 +50,12 @@ const UserCameras = ({ cameras }: UserCamerasProps) => {
           </ul>
         ) : (
           <div className={mergeClasses(styles.marginV, styles.marginH)}>
-            <Body1>User has no cameras assigned</Body1>
+            <Body1 as="em">User has no cameras assigned</Body1>
           </div>
         )
       ) : (
         <div className={mergeClasses(styles.marginV, styles.marginH)}>
-          <Body1>Please select a user</Body1>
+          <Body1 as="em">Please select a user</Body1>
         </div>
       )}
     </div>

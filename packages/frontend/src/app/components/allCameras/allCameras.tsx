@@ -28,7 +28,7 @@ const AllCameras = ({ cameras }: AllCamerasProps) => {
             <li key={camera.id}>
               <Camera
                 assignable={true}
-                disabledIcon={
+                disabled={
                   !currentUser ||
                   // TODO: Typing of context (createContext)
                   // @ts-expect-error: c (camera) should be typed

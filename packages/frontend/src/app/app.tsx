@@ -4,12 +4,13 @@ import { useMutation, useQuery } from 'urql';
 
 import {
   makeStyles,
+  makeStaticStyles,
   tokens,
   LargeTitle,
   Title1,
-  Title2,
   Title3,
   Body1,
+  Subtitle1,
 } from '@fluentui/react-components';
 
 import {
@@ -21,9 +22,25 @@ import {
 
 import { SelectUser, AllCameras, UserCameras } from './components';
 
+const useStaticStyles = makeStaticStyles({
+  '@font-face': {
+    fontFamily: 'Open Sans',
+    src: `url("../../assets/OpenSans-Medium.ttf")`,
+  },
+  body: {
+    margin: '0',
+    padding: '0',
+    background: 'linear-gradient(90deg, #fff 50%, #FFCC32)',
+    backgroundSize: '100% 20px',
+    backgroundRepeat: 'no-repeat',
+  },
+});
+
 const useStyles = makeStyles({
   //N.B. dont use colors directly, i.e. !'red'; use color tokens from themes
   app: {
+    margin: '1rem',
+
     '& ul': {
       listStyleType: 'none',
       padding: '0',
@@ -37,12 +54,17 @@ const useStyles = makeStyles({
     display: 'grid',
     gridTemplate: 'auto auto auto / 1fr 1fr',
     gridGap: '0.25rem',
+    padding: '1rem',
+    background: 'linear-gradient(90deg, white -25%, #ffcc33)',
+    borderRadius: '8px',
+    border: '2px solid #997000',
   },
 });
 
 export const Context = createContext(null);
 
 const App = () => {
+  useStaticStyles();
   const styles = useStyles();
 
   const [currentUser, setCurrentUser] = useState(null);
@@ -93,7 +115,12 @@ const App = () => {
   return (
     // TODO useMemo on context value: https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions
     <Context.Provider
-      value={{ currentUser, selectUser, assignCameraToUser, removeCameraFromUser }}
+      value={{
+        currentUser,
+        selectUser,
+        assignCameraToUser,
+        removeCameraFromUser,
+      }}
     >
       <div className={styles.app}>
         <div>
@@ -126,11 +153,11 @@ const App = () => {
             ) : (
               <div className={styles.cameraGrid}>
                 <div>
-                  <Title2 as="h3">Available cameras</Title2>
+                  <Subtitle1 as="h3">Available cameras</Subtitle1>
                 </div>
 
                 <div>
-                  <Title2 as="h3">Assigned cameras</Title2>
+                  <Subtitle1 as="h3">Assigned cameras</Subtitle1>
                 </div>
 
                 {/* HACK to get UI to align with grid */}
